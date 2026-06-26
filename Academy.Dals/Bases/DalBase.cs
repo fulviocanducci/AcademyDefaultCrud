@@ -1,7 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 using System.Collections.Generic;
 using System.Data;
-
 namespace Academy.Dals.Bases
 {
     public abstract class DalBase<T> where T : class
