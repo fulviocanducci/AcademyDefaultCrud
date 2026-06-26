@@ -2,7 +2,7 @@
 using System;
 namespace Academy.Models
 {
-    [Table("students")]
+    [Table("Students")]
     public class Student
     {
         [Key()]
