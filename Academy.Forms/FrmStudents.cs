@@ -23,7 +23,7 @@ namespace Academy.Forms
 
         private void LoadAndUpdateDataGridViewStudents()
         {
-            DataGridViewStudents.DataSource = DalStudent.GetAll("").ToList();
+            DataGridViewStudents.DataSource = DalStudent.GetAll(TxtSearch.Text ?? "").ToList();
         }
 
         private void LoadFrmStudentsOperation(int id = 0)
@@ -54,6 +54,14 @@ namespace Academy.Forms
         private void ButClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void TxtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoadAndUpdateDataGridViewStudents();
+            }
         }
     }
 }

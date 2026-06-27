@@ -1,6 +1,6 @@
 ﻿namespace Academy.Forms
 {
-    partial class FormMenu
+    partial class FrmMenu
     {
         /// <summary>
         /// Required designer variable.

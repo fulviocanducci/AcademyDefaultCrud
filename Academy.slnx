@@ -1,5 +1,6 @@
 <Solution>
-  <Project Path="Academy.Dals/Academy.Dals.csproj" />
-  <Project Path="Academy.Forms/Academy.Forms.csproj" />
-  <Project Path="Academy.Models/Academy.Models.csproj" />
+  <Project Path="Academy.Dals/Academy.Dals.csproj" Id="52627b5d-bfce-4ad7-97d7-4bef90a3fda7" />
+  <Project Path="Academy.Forms/Academy.Forms.csproj" Id="bd7b7d18-4ad7-48ec-931a-d7b6f93293bc" />
+  <Project Path="Academy.Models/Academy.Models.csproj" Id="b30383e4-0cf8-41f8-aa33-da0a3722cd0d" />
+  <Project Path="Academy.Validations/Academy.Validations.csproj" Id="2c1be0ac-9929-4cf7-9ea8-871480ef90fd" />
 </Solution>

@@ -33,11 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridViewStudents = new System.Windows.Forms.DataGridView();
+            this.ButClose = new System.Windows.Forms.Button();
+            this.ButNew = new System.Windows.Forms.Button();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ButClose = new System.Windows.Forms.Button();
-            this.ButNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,15 +64,53 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.DataGridViewStudents.Location = new System.Drawing.Point(12, 12);
+            this.DataGridViewStudents.Location = new System.Drawing.Point(12, 30);
             this.DataGridViewStudents.MultiSelect = false;
             this.DataGridViewStudents.Name = "DataGridViewStudents";
             this.DataGridViewStudents.ReadOnly = true;
             this.DataGridViewStudents.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DataGridViewStudents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DataGridViewStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewStudents.Size = new System.Drawing.Size(665, 195);
+            this.DataGridViewStudents.Size = new System.Drawing.Size(665, 208);
             this.DataGridViewStudents.TabIndex = 0;
             this.DataGridViewStudents.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewStudents_CellDoubleClick);
+            // 
+            // ButClose
+            // 
+            this.ButClose.Location = new System.Drawing.Point(602, 242);
+            this.ButClose.Name = "ButClose";
+            this.ButClose.Size = new System.Drawing.Size(75, 23);
+            this.ButClose.TabIndex = 1;
+            this.ButClose.Text = "&Sair";
+            this.ButClose.UseVisualStyleBackColor = true;
+            this.ButClose.Click += new System.EventHandler(this.ButClose_Click);
+            // 
+            // ButNew
+            // 
+            this.ButNew.Location = new System.Drawing.Point(12, 242);
+            this.ButNew.Name = "ButNew";
+            this.ButNew.Size = new System.Drawing.Size(75, 23);
+            this.ButNew.TabIndex = 2;
+            this.ButNew.Text = "&Novo";
+            this.ButNew.UseVisualStyleBackColor = true;
+            this.ButNew.Click += new System.EventHandler(this.ButNew_Click);
+            // 
+            // TxtSearch
+            // 
+            this.TxtSearch.Location = new System.Drawing.Point(62, 6);
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(615, 20);
+            this.TxtSearch.TabIndex = 3;
+            this.TxtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Pesquisa:";
             // 
             // Column1
             // 
@@ -89,7 +129,7 @@
             this.Column2.HeaderText = "Nome Completo";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 400;
+            this.Column2.Width = 396;
             // 
             // Column3
             // 
@@ -99,35 +139,18 @@
             this.Column3.HeaderText = "Aniversário";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            // 
-            // ButClose
-            // 
-            this.ButClose.Location = new System.Drawing.Point(602, 213);
-            this.ButClose.Name = "ButClose";
-            this.ButClose.Size = new System.Drawing.Size(75, 23);
-            this.ButClose.TabIndex = 1;
-            this.ButClose.Text = "&Sair";
-            this.ButClose.UseVisualStyleBackColor = true;
-            this.ButClose.Click += new System.EventHandler(this.ButClose_Click);
-            // 
-            // ButNew
-            // 
-            this.ButNew.Location = new System.Drawing.Point(12, 213);
-            this.ButNew.Name = "ButNew";
-            this.ButNew.Size = new System.Drawing.Size(75, 23);
-            this.ButNew.TabIndex = 2;
-            this.ButNew.Text = "&Novo";
-            this.ButNew.UseVisualStyleBackColor = true;
-            this.ButNew.Click += new System.EventHandler(this.ButNew_Click);
+            this.Column3.Width = 110;
             // 
             // FrmStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 246);
+            this.ClientSize = new System.Drawing.Size(689, 272);
+            this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.ButNew);
             this.Controls.Add(this.ButClose);
             this.Controls.Add(this.DataGridViewStudents);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -138,16 +161,19 @@
             this.Load += new System.EventHandler(this.FrmStudents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewStudents)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView DataGridViewStudents;
+        private System.Windows.Forms.Button ButClose;
+        private System.Windows.Forms.Button ButNew;
+        private System.Windows.Forms.TextBox TxtSearch;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button ButClose;
-        private System.Windows.Forms.Button ButNew;
     }
 }

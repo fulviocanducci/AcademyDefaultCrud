@@ -4,15 +4,14 @@ using System.Windows.Forms;
 
 namespace Academy.Forms
 {
-    public partial class FormMenu : Form
+    public partial class FrmMenu : Form
     {
-        public string SqlConnectionString = "Server=192.168.2.65,1433;Database=Academy;User Id=sa;Password=770301Ab@;TrustServerCertificate=True;";
         public SqlConnection Connection { get; private set; }
 
-        public FormMenu()
+        public FrmMenu()
         {
             InitializeComponent();
-            Connection = new SqlConnection(SqlConnectionString);
+            Connection = ConnectionSqlServer.Instance;
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
