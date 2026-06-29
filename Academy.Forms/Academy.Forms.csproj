@@ -98,8 +98,15 @@
     </Compile>
     <Compile Include="GlobalExtensions.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="Models\DTOs\EnterpriseDto.cs" />
+    <Compile Include="Models\DTOs\EnterpriseListDto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmEnterprise.resx">
       <DependentUpon>FrmEnterprise.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,15 +122,10 @@
     <EmbeddedResource Include="FrmStudentsOperation.resx">
       <DependentUpon>FrmStudentsOperation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -151,6 +153,12 @@
       <Project>{2c1be0ac-9929-4cf7-9ea8-871480ef90fd}</Project>
       <Name>Academy.Validations</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,5 +1,6 @@
 ﻿using Academy.Dals;
 using Academy.Dals.Contexts;
+using Academy.Forms.Models.DTOs;
 using System;
 using System.Windows.Forms;
 
@@ -23,7 +24,7 @@ namespace Academy.Forms
 
         private void LoadAndUpdateDataGridViewEnterprise()
         {
-            DataGridViewEnterprise.DataSource = DalEnterprise.GetAll();
+            DataGridViewEnterprise.DataSource = (EnterpriseListDto)DalEnterprise.GetAll(TxtSearch.Text ?? "");
             DataGridViewEnterprise.Update();
         }
 

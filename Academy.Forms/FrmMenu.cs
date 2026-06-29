@@ -1,6 +1,7 @@
 ﻿using Academy.Dals.Contexts;
 using System;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Academy.Forms
@@ -17,9 +18,14 @@ namespace Academy.Forms
             DatabaseContext = new DatabaseContext(ConnectionSqlServer.ConnectionString);
         }
 
-        private void FormMenu_Load(object sender, EventArgs e)
+        private async void FormMenu_Load(object sender, EventArgs e)
         {
-
+            MenuStripForm.Enabled = false;
+            await Task.Run(() =>
+            {
+                DatabaseContext.Database.Initialize(false);
+            });
+            MenuStripForm.Enabled = true;
         }
 
         private void MenuItemStudents_Click(object sender, EventArgs e)

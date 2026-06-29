@@ -82,5 +82,6 @@ namespace Academy.Forms
         {
             return string.Join(System.Environment.NewLine, GetErrors(errorProvider, parent));
         }
+
     }
 }
