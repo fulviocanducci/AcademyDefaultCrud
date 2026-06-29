@@ -24,6 +24,7 @@ namespace Academy.Forms
         private void LoadAndUpdateDataGridViewStudents()
         {
             DataGridViewStudents.DataSource = DalStudent.GetAll(TxtSearch.Text ?? "").ToList();
+            DataGridViewStudents.Update();
         }
 
         private void LoadFrmStudentsOperation(int id = 0)

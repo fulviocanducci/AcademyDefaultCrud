@@ -31,6 +31,8 @@
             this.MenuStripForm = new System.Windows.Forms.MenuStrip();
             this.MenuItemForm = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemStudents = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemEntreprise = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStripForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,9 @@
             // MenuItemForm
             // 
             this.MenuItemForm.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemStudents});
+            this.MenuItemStudents,
+            this.toolStripMenuItem1,
+            this.MenuItemEntreprise});
             this.MenuItemForm.Name = "MenuItemForm";
             this.MenuItemForm.Size = new System.Drawing.Size(71, 20);
             this.MenuItemForm.Text = "Cadastros";
@@ -59,14 +63,26 @@
             this.MenuItemStudents.Text = "Estudante";
             this.MenuItemStudents.Click += new System.EventHandler(this.MenuItemStudents_Click);
             // 
-            // FormMenu
+            // MenuItemEntreprise
+            // 
+            this.MenuItemEntreprise.Name = "MenuItemEntreprise";
+            this.MenuItemEntreprise.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemEntreprise.Text = "Empresa";
+            this.MenuItemEntreprise.Click += new System.EventHandler(this.MenuItemEntreprise_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.MenuStripForm);
             this.MainMenuStrip = this.MenuStripForm;
-            this.Name = "FormMenu";
+            this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Academia";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -83,6 +99,8 @@
         private System.Windows.Forms.MenuStrip MenuStripForm;
         private System.Windows.Forms.ToolStripMenuItem MenuItemForm;
         private System.Windows.Forms.ToolStripMenuItem MenuItemStudents;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemEntreprise;
     }
 }
 

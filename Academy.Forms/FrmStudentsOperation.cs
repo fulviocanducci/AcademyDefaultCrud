@@ -42,15 +42,34 @@ namespace Academy.Forms
                     MskDateBirthday.Text = model.DateBirthday.ToDateOrDefault();
                 }
             }
-            ToolTipStudent.IsBalloon = false;
-            ToolTipStudent.ToolTipIcon = ToolTipIcon.Error;
-            ToolTipStudent.ToolTipTitle = "Validação";
-            MskDateBirthday.Text = "00/00/0000";
+        }
+
+        private bool FormValid()
+        {
+            ErrorProviderStudent.SetError(TxtName, null);
+            ErrorProviderStudent.SetError(MskDateBirthday, null);
+            // Test TxtName
+            if (string.IsNullOrWhiteSpace(TxtName.Text))
+            {
+                ErrorProviderStudent.SetError(TxtName, "Nome é obrigatório");
+            }
+            // Test MskDateBirthday
+            string numbers = MskDateBirthday.Text.GetNumbers();
+            if (numbers.Length > 0 && numbers.Length < 8)
+            {
+                ErrorProviderStudent.SetError(MskDateBirthday, "Data é inválida");
+            }
+            else if (numbers.Length == 8 && !ValidationCustom.IsDateTime(MskDateBirthday.Text.ToDate()))
+            {
+                ErrorProviderStudent.SetError(MskDateBirthday, "Data é inválida");
+            }
+            return ErrorProviderStudent.GetErrors(this).Count == 0;
         }
 
         private void ButSave_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren())
+            bool formValid = FormValid();
+            if (formValid)
             {
                 Student model = new Student
                 {
@@ -88,50 +107,6 @@ namespace Academy.Forms
         private void ButClose_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void TxtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            void ErrorProviderAndToolTipShow()
-            {
-                ErrorProviderStudent.SetError(TxtName, "Nome é obrigatório");
-                ToolTipStudent.Show("Nome é obrigatório", TxtName, 3000);
-            }
-            ErrorProviderStudent.SetError(TxtName, null);
-            if (string.IsNullOrWhiteSpace(TxtName.Text))
-            {
-                ErrorProviderAndToolTipShow();
-                e.Cancel = true;
-            }
-        }
-
-        private void MskDateBirthday_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            void ErrorProviderAndToolTipShow()
-            {
-                ErrorProviderStudent.SetError(MskDateBirthday, "Data inválida");
-                ToolTipStudent.Show("Data inválida", MskDateBirthday, 3000);
-            }
-
-            string numbers = MskDateBirthday.Text.GetNumbers();
-            ErrorProviderStudent.SetError(MskDateBirthday, null);
-            if (numbers.Length > 0 && numbers.Length < 8)
-            {
-                ErrorProviderAndToolTipShow();
-                e.Cancel = true;
-                return;
-            }
-            if (numbers.Length == 8 && !ValidationCustom.IsDateTime(MskDateBirthday.Text.ToDate()))
-            {
-                ErrorProviderAndToolTipShow();
-                e.Cancel = true;
-                return;
-            }
-        }
-
-        private void FrmStudentsOperation_Shown(object sender, EventArgs e)
-        {
-
         }
     }
 }
