@@ -3,7 +3,6 @@ using System;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Academy.Forms
 {
     public partial class FrmMenu : Form
@@ -43,7 +42,7 @@ namespace Academy.Forms
         {
             MenuStripForm.Visible = false;
             ToolStripMenu.Visible = false;
-            using (var frmSplash = new FrmSplash())
+            using (FrmSplash frmSplash = new FrmSplash())
             {
                 frmSplash.Show();
                 Application.DoEvents();
