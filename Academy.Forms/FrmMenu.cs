@@ -42,6 +42,7 @@ namespace Academy.Forms
         private async void FrmMenu_Shown(object sender, EventArgs e)
         {
             MenuStripForm.Visible = false;
+            ToolStripMenu.Visible = false;
             using (var frmSplash = new FrmSplash())
             {
                 frmSplash.Show();
@@ -53,11 +54,35 @@ namespace Academy.Forms
                 frmSplash.Close();
             }
             MenuStripForm.Visible = true;
+            ToolStripMenu.Visible = true;
         }
 
         private void MenuItemSystemEnd_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ToolStripButStudent_Click(object sender, EventArgs e)
+        {
+            MenuItemStudents.PerformClick();
+        }
+
+        private void ToolStripButEnterprise_Click(object sender, EventArgs e)
+        {
+            MenuItemEntreprise.PerformClick();
+        }
+
+        private void ToolStripButEnd_Click(object sender, EventArgs e)
+        {
+            MenuItemSystemEnd.PerformClick();
+        }
+
+        private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja sair?", "Sair do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
