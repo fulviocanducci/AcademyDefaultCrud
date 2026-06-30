@@ -32,14 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudents));
             this.DataGridViewStudents = new System.Windows.Forms.DataGridView();
-            this.ButClose = new System.Windows.Forms.Button();
-            this.ButNew = new System.Windows.Forms.Button();
-            this.TxtSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ButClose = new System.Windows.Forms.Button();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ButNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             this.DataGridViewStudents.AllowUserToResizeColumns = false;
             this.DataGridViewStudents.AllowUserToResizeRows = false;
             this.DataGridViewStudents.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.DataGridViewStudents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,43 +76,7 @@
             this.DataGridViewStudents.Size = new System.Drawing.Size(665, 208);
             this.DataGridViewStudents.TabIndex = 0;
             this.DataGridViewStudents.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewStudents_CellDoubleClick);
-            // 
-            // ButClose
-            // 
-            this.ButClose.Location = new System.Drawing.Point(602, 242);
-            this.ButClose.Name = "ButClose";
-            this.ButClose.Size = new System.Drawing.Size(75, 23);
-            this.ButClose.TabIndex = 1;
-            this.ButClose.Text = "&Sair";
-            this.ButClose.UseVisualStyleBackColor = true;
-            this.ButClose.Click += new System.EventHandler(this.ButClose_Click);
-            // 
-            // ButNew
-            // 
-            this.ButNew.Location = new System.Drawing.Point(12, 242);
-            this.ButNew.Name = "ButNew";
-            this.ButNew.Size = new System.Drawing.Size(75, 23);
-            this.ButNew.TabIndex = 2;
-            this.ButNew.Text = "&Novo";
-            this.ButNew.UseVisualStyleBackColor = true;
-            this.ButNew.Click += new System.EventHandler(this.ButNew_Click);
-            // 
-            // TxtSearch
-            // 
-            this.TxtSearch.Location = new System.Drawing.Point(62, 6);
-            this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(615, 20);
-            this.TxtSearch.TabIndex = 3;
-            this.TxtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Pesquisa:";
+            this.DataGridViewStudents.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridViewStudents_KeyDown);
             // 
             // Column1
             // 
@@ -141,17 +107,62 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 110;
             // 
+            // ButClose
+            // 
+            this.ButClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ButClose.Image = global::Academy.Forms.Resources.end;
+            this.ButClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButClose.Location = new System.Drawing.Point(583, 244);
+            this.ButClose.Name = "ButClose";
+            this.ButClose.Size = new System.Drawing.Size(94, 27);
+            this.ButClose.TabIndex = 1;
+            this.ButClose.Text = "&Sair [Esc]";
+            this.ButClose.UseVisualStyleBackColor = true;
+            this.ButClose.Click += new System.EventHandler(this.ButClose_Click);
+            // 
+            // TxtSearch
+            // 
+            this.TxtSearch.Location = new System.Drawing.Point(62, 6);
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(615, 20);
+            this.TxtSearch.TabIndex = 3;
+            this.TxtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
+            this.TxtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Pesquisa:";
+            // 
+            // ButNew
+            // 
+            this.ButNew.Image = global::Academy.Forms.Resources.icons8_add_16;
+            this.ButNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButNew.Location = new System.Drawing.Point(12, 244);
+            this.ButNew.Name = "ButNew";
+            this.ButNew.Size = new System.Drawing.Size(94, 27);
+            this.ButNew.TabIndex = 2;
+            this.ButNew.Text = "&Novo [F4]";
+            this.ButNew.UseVisualStyleBackColor = true;
+            this.ButNew.Click += new System.EventHandler(this.ButNew_Click);
+            // 
             // FrmStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 272);
+            this.CancelButton = this.ButClose;
+            this.ClientSize = new System.Drawing.Size(689, 277);
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.ButNew);
             this.Controls.Add(this.ButClose);
             this.Controls.Add(this.DataGridViewStudents);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -159,6 +170,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estudantes ...";
             this.Load += new System.EventHandler(this.FrmStudents_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmStudents_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

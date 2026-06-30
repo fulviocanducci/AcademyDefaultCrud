@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentsOperation));
             this.GroupBoxStudent = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,7 +70,7 @@
             this.label1.Location = new System.Drawing.Point(10, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Nome Completo";
             // 
             // MskDateBirthday
@@ -78,7 +79,7 @@
             this.MskDateBirthday.Mask = "00/00/0000";
             this.MskDateBirthday.Name = "MskDateBirthday";
             this.MskDateBirthday.Size = new System.Drawing.Size(97, 20);
-            this.MskDateBirthday.TabIndex = 1;
+            this.MskDateBirthday.TabIndex = 4;
             this.MskDateBirthday.ValidatingType = typeof(System.DateTime);
             // 
             // TxtName
@@ -86,14 +87,16 @@
             this.TxtName.Location = new System.Drawing.Point(11, 36);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(301, 20);
-            this.TxtName.TabIndex = 0;
+            this.TxtName.TabIndex = 2;
             // 
             // ButSave
             // 
+            this.ButSave.Image = global::Academy.Forms.Resources.icons8_save_16;
+            this.ButSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButSave.Location = new System.Drawing.Point(12, 130);
             this.ButSave.Name = "ButSave";
-            this.ButSave.Size = new System.Drawing.Size(75, 23);
-            this.ButSave.TabIndex = 3;
+            this.ButSave.Size = new System.Drawing.Size(94, 27);
+            this.ButSave.TabIndex = 5;
             this.ButSave.Text = "S&alvar";
             this.ButSave.UseVisualStyleBackColor = true;
             this.ButSave.Click += new System.EventHandler(this.ButSave_Click);
@@ -101,11 +104,14 @@
             // ButClose
             // 
             this.ButClose.CausesValidation = false;
-            this.ButClose.Location = new System.Drawing.Point(268, 130);
+            this.ButClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ButClose.Image = global::Academy.Forms.Resources.end;
+            this.ButClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButClose.Location = new System.Drawing.Point(249, 130);
             this.ButClose.Name = "ButClose";
-            this.ButClose.Size = new System.Drawing.Size(75, 23);
-            this.ButClose.TabIndex = 4;
-            this.ButClose.Text = "&Sair";
+            this.ButClose.Size = new System.Drawing.Size(94, 27);
+            this.ButClose.TabIndex = 6;
+            this.ButClose.Text = "&Sair [Esc]";
             this.ButClose.UseVisualStyleBackColor = true;
             this.ButClose.Click += new System.EventHandler(this.ButClose_Click);
             // 
@@ -115,13 +121,16 @@
             // 
             // FrmStudentsOperation
             // 
+            this.AcceptButton = this.ButSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.ButClose;
             this.ClientSize = new System.Drawing.Size(355, 161);
             this.Controls.Add(this.ButClose);
             this.Controls.Add(this.ButSave);
             this.Controls.Add(this.GroupBoxStudent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

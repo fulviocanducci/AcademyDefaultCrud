@@ -1,6 +1,7 @@
 ﻿using Academy.Dals;
 using Academy.Dals.Contexts;
 using Academy.Forms.Models.DTOs;
+using Academy.Forms.Utils;
 using System;
 using System.Windows.Forms;
 
@@ -10,11 +11,16 @@ namespace Academy.Forms
     {
         public DatabaseContext DatabaseContext { get; }
         public DalEnterprise DalEnterprise { get; }
+        public DebounceTimer DebounceTimer { get; }
         public FrmEnterprise(DatabaseContext databaseContext)
         {
             InitializeComponent();
             DatabaseContext = databaseContext;
             DalEnterprise = new DalEnterprise(DatabaseContext);
+            DebounceTimer = new DebounceTimer(500, (s, e) =>
+            {
+                LoadAndUpdateDataGridViewEnterprise();
+            });
         }
 
         private void FrmEnterprise_Load(object sender, EventArgs e)
@@ -44,12 +50,10 @@ namespace Academy.Forms
 
         private void DataGridViewEnterprise_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            DataGridView dataGridView = (DataGridView)sender;
+            if (dataGridView.TryGetRowId(e.RowIndex, out int id))
             {
-                if (int.TryParse(DataGridViewEnterprise.CurrentRow.Cells[0].Value.ToString(), out int id))
-                {
-                    LoadFrmEnterpriseOperation(id);
-                }
+                LoadFrmEnterpriseOperation(id);
             }
         }
 
@@ -64,6 +68,25 @@ namespace Academy.Forms
             {
                 LoadAndUpdateDataGridViewEnterprise();
             }
+        }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DebounceTimer.Execute();
+        }
+
+        private void DataGridViewEnterprise_KeyDown(object sender, KeyEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+            if (dataGridView.TryGetSelectedId(e, out int id))
+            {
+                LoadFrmEnterpriseOperation(id);
+            }
+        }
+
+        private void FrmEnterprise_KeyDown(object sender, KeyEventArgs e)
+        {
+            ButNew.ClickWhenPressed(e, Keys.F4);
         }
     }
 }

@@ -83,5 +83,45 @@ namespace Academy.Forms
             return string.Join(System.Environment.NewLine, GetErrors(errorProvider, parent));
         }
 
+        public static bool TryGetSelectedId(this DataGridView grid, KeyEventArgs e, out int id, int columnIndex = 0)
+        {
+            id = 0;
+
+            if (e.KeyCode != Keys.Enter)
+                return false;
+            e.SuppressKeyPress = true;
+            e.Handled = true;
+            var row = grid.CurrentRow;
+            return row?.Cells[columnIndex].Value != null &&
+                   int.TryParse(row.Cells[columnIndex].Value.ToString(), out id);
+        }
+
+        public static bool TryGetRowId(this DataGridView grid, int rowIndex, out int id, int columnIndex = 0)
+        {
+            id = 0;
+            if (rowIndex < 0)
+                return false;
+            var value = grid.Rows[rowIndex].Cells[columnIndex].Value;
+            return value != null && int.TryParse(value.ToString(), out id);
+        }
+
+        public static void ClickWhenPressed(this Button button, KeyEventArgs e, Keys key)
+        {
+            if (e.KeyCode == key)
+            {
+                button.PerformClick();
+                e.Handled = true;
+            }
+        }
+
+        public static void LabelNew(this Button button)
+        {
+            button.Text = "Novo";
+        }
+
+        public static void LabelUpdate(this Button button)
+        {
+            button.Text = "Alterar";
+        }
     }
 }

@@ -117,32 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ErrorProviderEnterprise.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAABjWkXwZFpF/2RaRf9sZGT/bGRk/2RaRf9kWkX/Y1pE7gAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAY1pFqWRaRf9kWkX/gn+2/4J/tv9kWkX/ZFpF/41yTeB1b5TRRVWo47KP
-        fr32tGOrAAAAAAAAAAAAAAAAAAAAAF9VPxhjWUXKaWBM/6am5v+np+f/a2FN/4RuTf/ouH3/Wmev/ww2
-        v/+qmaD/+cqQ/wAAAAAAAAAAAAAAAAAAAAAAAAAAf39/AlCLsIUyqfv/Mqn7/4+Le//AZRX/5qln/1pn
-        r/8MNr//qpmg//nKkP8AAAAAAAAAAAAAAAAAAAAAAAAAAH9//wJGtP/ETbf//023//9ttN//5alo//O/
-        gv/Fqpr/qpmg/9+6lf/5ypD/AAAAAAAAAAAAAAAAAAAAAAAAAABCsP9YTbf//023//9Nt///Tbf//6CV
-        gP/stHX/4J1Z/9OHPf/stHX/+cqQ/wAAAAAAAAAAAAAAAAAAAAAAAAAAQHCRw0Sl6f9Fpen/RKXp/0Wl
-        6f9ebXP/5qln/9OHPf/AZRX/5qln//nKkP8AAAAAAAAAAAAAAAAAAAAAAAAAAERSXLZHe5//S6Ld/023
-        //9Ln9j/dnVs//nKkP/5ypD/+cqQ//nKkP/5ypD/AAAAAAAAAAAAAAAAAAAAAAAAAABCQkJRQkJC/0JC
-        Qv9MVFf/SElI/5lbJf/mqWf/04c9/8BlFf/mqWf/+cqQ/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEJC
-        QnZJR0TtSUdF/7WEU//Thz3/7LR1/+CdWf/Thz3/7LR1//nKkP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAA+cmQVfnKkP/stHX/5qln//O/gv/stHX/5qln//O/gv/5ypD/AAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAPnJkFX5ypD/04c9/8BlFf/mqWf/04c9/8BlFf/mqWf/+cqQ/wAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAD4yo9S+cqQ/+y0df/mqWf/87+C/+y0df/mqWf/87+C//jKj/wAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAA88WLFvnJkNj5ypD/+cqQ//nKkP/5ypD/+cqQ//jKj/z4ypCaAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAA//8AAMA/AADAAwAAwAMAAOADAADgAwAA4AMAAOADAADgAwAA4AMAAPADAAD4AwAA+AMAAPgD
-        AAD4AwAA//8AAA==
-</value>
-  </data>
 </root>

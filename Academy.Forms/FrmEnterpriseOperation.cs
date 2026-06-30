@@ -22,8 +22,10 @@ namespace Academy.Forms
 
         private void FrmEnterpriseOperation_Load(object sender, EventArgs e)
         {
+            ButSave.LabelNew();
             if (Id > 0)
             {
+                ButSave.LabelUpdate();
                 var result = DalEnterprise.Get(Id);
                 if (result != null)
                 {
@@ -42,7 +44,7 @@ namespace Academy.Forms
             {
                 ErrorProviderEnterprise.SetError(TxtName, "Nome é obrigatório");
             }
-            return ErrorProviderEnterprise.GetErrors(this).Count == 0;
+            return ErrorProviderEnterprise.GetErrors(GroupBoxEnterprise).Count == 0;
         }
 
         private void ButClose_Click(object sender, EventArgs e)

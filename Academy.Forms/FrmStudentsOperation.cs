@@ -33,8 +33,10 @@ namespace Academy.Forms
 
         private void FrmStudentsOperation_Load(object sender, EventArgs e)
         {
+            ButSave.LabelNew();
             if (Id > 0)
             {
+                ButSave.LabelUpdate();
                 Student model = DalStudent.Find(Id);
                 if (model != null)
                 {
@@ -63,7 +65,7 @@ namespace Academy.Forms
             {
                 ErrorProviderStudent.SetError(MskDateBirthday, "Data é inválida");
             }
-            return ErrorProviderStudent.GetErrors(this).Count == 0;
+            return ErrorProviderStudent.GetErrors(GroupBoxStudent).Count == 0;
         }
 
         private void ButSave_Click(object sender, EventArgs e)

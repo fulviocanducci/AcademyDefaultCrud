@@ -20,12 +20,7 @@ namespace Academy.Forms
 
         private async void FormMenu_Load(object sender, EventArgs e)
         {
-            MenuStripForm.Enabled = false;
-            await Task.Run(() =>
-            {
-                DatabaseContext.Database.Initialize(false);
-            });
-            MenuStripForm.Enabled = true;
+
         }
 
         private void MenuItemStudents_Click(object sender, EventArgs e)
@@ -42,6 +37,27 @@ namespace Academy.Forms
             {
                 frm.ShowDialog();
             }
+        }
+
+        private async void FrmMenu_Shown(object sender, EventArgs e)
+        {
+            MenuStripForm.Visible = false;
+            using (var frmSplash = new FrmSplash())
+            {
+                frmSplash.Show();
+                Application.DoEvents();
+                await Task.Run(() =>
+                {
+                    DatabaseContext.Database.Initialize(false);
+                });
+                frmSplash.Close();
+            }
+            MenuStripForm.Visible = true;
+        }
+
+        private void MenuItemSystemEnd_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
